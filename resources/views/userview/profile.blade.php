@@ -38,6 +38,47 @@
                    
 </div>
     <button type="submit" class="btn btn-primary">Submit</button>
+  </form><br>
+
+
+  <form action="{{route('/Edite')}}" method="POST" style=" width: 500px;  margin-left: 300px;">
+<h2 class="card-title">Other Infoemation</h2>
+
+    {{csrf_field()}}
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Profession</label>
+        <input type="text" name="name" class="form-control" value="{{$infos->profession}}" placeholder="Name" aria-label="First name">
+        @error('name')
+        <span class="error" >{{$message}}</span>
+      @enderror
+     
+       
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Hobby</label>
+        <input type="text" name="username" class="form-control" value="{{$infos->hobby}}" placeholder="User name" aria-label="First name">
+        @error('username')
+                      <span class="error" >{{$message}}</span>
+                    @enderror
+                   
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Age</label>
+        <input type="text" name="phonenumber" class="form-control" value="{{$infos->Age}}" placeholder="Phone Number" aria-label="First name">
+        @error('phonenumber')
+                      <span class="error" >{{$message}}</span>
+                    @enderror
+                   
+      </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Gender</label>
+      <input type="text" name="email" class="form-control" value="{{$infos->gender}}" placeholder="email" aria-label="First name">
+      @error('email')
+                      <span class="error" >{{$message}}</span>
+                    @enderror
+                   
+</div>
+    <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 
 @endsection

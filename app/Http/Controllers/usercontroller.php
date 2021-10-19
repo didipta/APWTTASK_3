@@ -64,7 +64,10 @@ class usercontroller extends Controller
       
         $id = $request->id;
         $User = User::where('id',$id)->first();
-        return view('userview.profile')->with('user', $User);
+        $info = User::where('id',$id)->first();
+        $x=$info->assignedinfo();
+        return view('userview.profile')->with('user', $User)
+        ->with('infos',$x);
 
     }
 
@@ -88,6 +91,8 @@ class usercontroller extends Controller
             return view("userview.home",['user'=>$User]);
 
     }
+
+   
 
  
 }
