@@ -64,8 +64,7 @@ class usercontroller extends Controller
       
         $id = $request->id;
         $User = User::where('id',$id)->first();
-        $info = User::where('id',$id)->first();
-        $x=$info->assignedinfo();
+        $x=$User->assignedinfo();
         return view('userview.profile')->with('user', $User)
         ->with('infos',$x);
 
